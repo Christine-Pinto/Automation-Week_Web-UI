@@ -1,0 +1,11 @@
+{
+  "name": "automation-week_web-ui",
+  "version": "0.0.1",
+  "description": "This repo is solving the Automation Week Challenges that is focused on Web API automation from the Ministry of Testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christine Zierold",
+  "license": "ISC"
+}
