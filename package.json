@@ -4,11 +4,12 @@
   "description": "This repo is solving the Automation Week Challenges that is focused on Web API automation from the Ministry of Testing",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress open"
   },
   "author": "Christine Zierold",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^5.4.0"
+    "cypress": "^5.4.0",
+    "faker": "^5.1.0"
   }
 }

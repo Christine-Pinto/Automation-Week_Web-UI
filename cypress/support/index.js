@@ -18,3 +18,6 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+//Import faker.js to generate fake data (e.g. text or names) 
+cy.faker = require('faker');
