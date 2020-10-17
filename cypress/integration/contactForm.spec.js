@@ -1,5 +1,6 @@
 /* Beginner Challenge
-Create an automated test that completes the contact us form on the homepage, submits it, and asserts that the form was completed successfully.
+Create an automated test that completes the contact us form on the homepage,
+ submits it, and asserts that the form was completed successfully.
 */
 
 describe('/contactForm', () => {
@@ -42,31 +43,13 @@ describe('/contactForm', () => {
       .should('be.visible')
   })
 
-  it('Submit a contact request', () => {
+  it.only('Submit a contact request', () => {
     //Save name and subject in variables to check in the end if submit of the contact form was successfull and response message contains these the name and subject
     let name = cy.faker.name.findName()
     let subject = 'CypressTest '+ cy.faker.lorem.word()
+    let email = cy.faker.internet.email()
 
-    //Fill in the contact form input fields with generated fake Data by faker.js
-    cy.get('input#name')
-      .should('be.visible')
-      .type(name)
-    cy.get('input#email')
-      .type(cy.faker.internet.email())
-    cy.get('input#phone')
-      .type(cy.faker.phone.phoneNumber())
-    cy.get('input#subject')
-      .type(subject)
-    cy.get('textarea#description')
-      .type(cy.faker.lorem.text())
-
-    //Click on the 'submit' button
-    cy.get('button#submitContact')
-      .click()
-    
-    //Check if response message contains name and subject from the contact form
-    cy.contains('h2', name)
-    cy.contains('p', subject)
+    cy.sendMessage(name, subject, email)
   })
 
 })
