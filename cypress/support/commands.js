@@ -35,6 +35,6 @@ Cypress.Commands.add("sendMessage", (name, subject,email) => {
     .click()
 
   //Check if backend it loaded
-  cy.contains('a', 'B&B Booking Management')
-
+  cy.get('div.room-form')
+    .should('be.visible')
  })
