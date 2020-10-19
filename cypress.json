@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://aw4.automationintesting.online/#/",
+  "baseUrl": "https://aw3.automationintesting.online/#/",
   "env" : {
     "userName": "test@test.com",
     "password": "Test123456"
