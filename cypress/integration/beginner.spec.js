@@ -3,7 +3,7 @@ Create an automated test that completes the contact us form on the homepage,
  submits it, and asserts that the form was completed successfully.
 */
 
-describe('/contactForm', () => {
+describe('Beginner Challenge', () => {
   beforeEach(() => {
     cy.visit('/')
     //Check if logo is visible to ensure the website is loaded
@@ -43,7 +43,7 @@ describe('/contactForm', () => {
       .should('be.visible')
   })
 
-  it.only('Submit a contact request', () => {
+  it('Submit a contact request', () => {
     //Save name and subject in variables to check in the end if submit of the contact form was successfull and response message contains these the name and subject
     let name = cy.faker.name.findName()
     let subject = 'CypressTest '+ cy.faker.lorem.word()
