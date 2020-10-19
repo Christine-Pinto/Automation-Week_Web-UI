@@ -11,6 +11,7 @@ describe('Beginner Challenge', () => {
       .should('be.visible')
   })
 
+  //This check wasn't required for the challenge, but I wanted to check the form first and make sure all the fields are working before submitting a message using this form
   it('Check contactForm fields', () => {
     //Variables to check if fields contain the correct value after typeing
     let name = cy.faker.name.findName()
