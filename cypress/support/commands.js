@@ -21,3 +21,20 @@ Cypress.Commands.add("sendMessage", (name, subject,email) => {
   cy.contains('p', subject)
  })
 
+ Cypress.Commands.add("adminLogin", (userName, password) => { 
+  cy.visit('admin')
+  cy.get('input#username')
+    .should('be.visible')
+    .type(userName)
+  cy.get('input#password')
+    .should('be.visible')
+    .type(password)
+
+  //Click on the 'login' button
+  cy.get('button#doLogin')
+    .click()
+
+  //Check if backend it loaded
+  cy.contains('a', 'B&B Booking Management')
+
+ })
