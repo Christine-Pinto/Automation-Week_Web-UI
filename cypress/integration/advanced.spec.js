@@ -7,46 +7,43 @@ You’ll have to click ‘Book this Room’, drag over dates you wish to book, c
 describe('Advanced Challenge', () => {
   beforeEach(() => {
     cy.visit('/')
-    //Check if logo is visible to ensure the website is loaded
+    // Check if logo is visible to ensure the website is loaded
     cy.get('img.hotel-logoUrl')
       .should('be.visible')
   })
 
-  //This check wasn't required for the challenge, but I wanted to check the form first and make sure all the fields are working before submitting a message using this form
   it('Book a room', () => { 
     let firstName = cy.faker.name.firstName()
     let lastName = cy.faker.name.lastName()
     let email = cy.faker.internet.email()
-    let check = 1;
 
-    //Click on the 'Book this room' button
+    // Click on the 'Book this room' button
     cy.get('button').contains('Book this room')
       .click()
-    //click into the next month
-    let max = Math.round(Math.random() * (12 - 1))
 
+    // Click the 'next' button to switch the next month in the calendar
     cy.get('.rbc-btn-group').children().last()
       .click()
+      .wait(800);
 
-
-    /// Check if there are dates unavailable in this month
-    cy.get('.rbc-row-content').find( 'div.rbc-event-content' ).its('length').then(res=>{
-      //if so than go into the next month
-      if(res > 0){
-          //// do task that you want to perform
+    // Conditional testing with Cypress is not as easy as it should be see here: https://docs.cypress.io/guides/core-concepts/conditional-testing.html
+    // As we do not reset the database for every test, there may be no room available for the period shown --> In this case the test clicks 'next' to go to the next month
+    // Loop is checking for a maxinmum of 14 month in to the future to book a room
+    for (var i = 1; i < 15; i++) {
+      cy.get("body").then($body => {
+        if ($body.find("div.rbc-event-content").length > 0) { // There are some dates not avaiable for the room
           cy.get('.rbc-btn-group').children().last()
-            .click()
-            .wait(200);
-      }else{
-        check = 0;
-      }
-      });
+          .click()
+          .wait(800);
+        }
+        else { // All dates are avaiable for the room
+          i = 15;
+        }
+      })
+    }
 
-
-
-
-    
-    //ToDo: Make selection of dates randomized
+    // ToDo: Make selection of dates randomized
+    // Dates have to be selected via dragging the mouse from the start to the enddate --> mousedown, mousemove, mouseup
     cy.get('div.rbc-row-content').eq(0).children().children('.rbc-date-cell').eq(0)
       .click()
       .trigger("mousedown", { which: 1, pageX: 0, pageY: 0 });
@@ -55,7 +52,7 @@ describe('Advanced Challenge', () => {
       .trigger("mousemove", 50, 0)
       .trigger("mouseup" ); 
  
-    //Fill out the form
+    // Fill out the form
     cy.get('input.room-firstname')
       .type(firstName)
     cy.get('input.room-lastname')
@@ -65,13 +62,13 @@ describe('Advanced Challenge', () => {
     cy.get('input.room-phone')
       .type(cy.faker.phone.phoneNumber())
 
-    //Click on the 'Book' button to send the booking request
+    // Click on the 'Book' button to send the booking request
     cy.get('button.book-room').contains('Book')
       .click()
 
-      cy.get('div.confirmation-modal')
-        .should('be.visible')
-        .contains('Booking Successful!')
-       
+    // Check if confirmation popUp is shown.
+    cy.get('div.confirmation-modal')
+      .should('be.visible')
+      .contains('Booking Successful!')
   })
 })
