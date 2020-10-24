@@ -1,4 +1,5 @@
 # Automation-Week_Web-UI
+![Automation-Week_Web-UI](./assets/AutomationWeek.png)
 This repo is solving the Automation Week Challenges that is focused on Web UI automation from the Ministry of Testing. (https://club.ministryoftesting.com/t/automation-week-challenges-web-ui/43665)
 
 # Restful Booker Platform
