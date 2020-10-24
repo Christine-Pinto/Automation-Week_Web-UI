@@ -22,12 +22,16 @@ Create an automated test where a user successfully books a room from the homepag
 
 You’ll have to click ‘Book this Room’, drag over dates you wish to book, complete the required information and submit the booking.
 
-# Running Tests
+# How to start the test
 
-To run the test suite, run:
-```shell
-    npm run test
-```
+1. Clone this repository 
+2. Execute 'npm install' in your local folder to install all dependencies (including cypress.io)
+3. Execute 'npm test' to start the cypress test runner
+4. Cypress is opening  
+5. Select one of the tests and double-click on it
+6. The test will automatically start and execute the defined assertions and steps
+7. At the end you can see the results of the executed tests
+
 
 # Contact
 
