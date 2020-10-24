@@ -4,7 +4,7 @@ This repo is solving the Automation Week Challenges that is focused on Web UI au
 # Restful Booker Platform
 The sample website application for this challenge [Restful Brooker Platform](https://automationintesting.online/) is kindly provided by [Mark Winteringham](https://twitter.com/2bittester) / [Richard Bradshaw](https://twitter.com/FriendlyTester).
 
-![Restful Booker Platform](https://j.gifs.com/gZggj9.gif)
+![./assets/RestfulBookerPlatform.jpg](https://j.gifs.com/gZggj9.gif)
 
 # The Challenges :
 
