@@ -7,7 +7,7 @@
     "test": "npx cypress open"
   },
   "author": "Christine Zierold",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "cypress": "^5.4.0",
     "faker": "^5.1.0"
