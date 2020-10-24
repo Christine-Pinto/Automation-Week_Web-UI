@@ -36,8 +36,8 @@ describe('Advanced Challenge', () => {
           .click()
           .wait(800);
         }
-        else { // All dates are available for the room
-          i = 15;
+        else {
+          i = 15; // Set the counter to 15 to continue the test as there are dates available
         }
       })
     }
