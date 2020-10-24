@@ -31,12 +31,12 @@ describe('Advanced Challenge', () => {
     // Loop is checking for a maxinmum of 14 month in to the future to book a room
     for (var i = 1; i < 15; i++) {
       cy.get("body").then($body => {
-        if ($body.find("div.rbc-event-content").length > 0) { // There are some dates not avaiable for the room
+        if ($body.find("div.rbc-event-content").length > 0) { // There are some dates not available for the room
           cy.get('.rbc-btn-group').children().last()
           .click()
           .wait(800);
         }
-        else { // All dates are avaiable for the room
+        else { // All dates are available for the room
           i = 15;
         }
       })
