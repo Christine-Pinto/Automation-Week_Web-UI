@@ -22,6 +22,13 @@ Create an automated test where a user successfully books a room from the homepag
 
 You’ll have to click ‘Book this Room’, drag over dates you wish to book, complete the required information and submit the booking.
 
+# Running Tests
+
+To run the test suite, run:
+```shell
+    npm run test
+```
+
 # Contact
 
 You can find me on [Twitter](https://twitter.com/ChrisZie_).
