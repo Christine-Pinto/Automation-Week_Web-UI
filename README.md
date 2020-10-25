@@ -1,3 +1,4 @@
+[![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
 # Automation-Week_Web-UI
 ![Automation-Week_Web-UI](./assets/AutomationWeek.png)
 This repo is solving the Automation Week Challenges that is focused on Web UI automation from the Ministry of Testing. (https://club.ministryoftesting.com/t/automation-week-challenges-web-ui/43665)
