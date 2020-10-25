@@ -34,7 +34,7 @@ describe('Advanced Challenge', () => {
         if ($body.find("div.rbc-event-content").length > 0) { // There are some dates not available for the room
           cy.get('.rbc-btn-group').children().last()
           .click()
-          .wait(800);
+          .wait(800); // Need to wait for the 'unaviable'-label to appear --> ToDo: Find a better way to wait for an element that might not be there
         }
         else {
           i = 15; // Set the counter to 15 to continue the test as there are dates available
