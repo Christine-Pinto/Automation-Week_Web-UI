@@ -24,7 +24,7 @@ describe('Advanced Challenge', () => {
     // Click the 'next' button to switch the next month in the calendar
     cy.get('.rbc-btn-group').children().last()
       .click()
-      .wait(500);
+      .wait(500); // ToDo: Find a better way to check or wait here 
 
     // Conditional testing with Cypress is not as easy as it should be see here: https://docs.cypress.io/guides/core-concepts/conditional-testing.html
     // As we do not reset the database for every test, there may be no room available for the period shown --> In this case the test clicks 'next' to go to the next month
