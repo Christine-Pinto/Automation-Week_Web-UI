@@ -40,7 +40,7 @@ You’ll have to click ‘Book this Room’, drag over dates you wish to book, c
 
 # Contact
 
-You can find me on [Twitter](https://twitter.com/ChrisPint_).
+You can find me on [Twitter](https://twitter.com/_ChristinePinto).
 
 # LICENSE
 
